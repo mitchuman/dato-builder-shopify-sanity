@@ -1,4 +1,4 @@
-import { GraphQLClient } from 'graphql-request'
+import { GraphQLClient, gql } from 'graphql-request'
 import type { RequestConfig } from 'graphql-request/build/esm/types'
 
 export function request<T>(
@@ -25,3 +25,21 @@ export function request<T>(
 
 	return client.request(query, variables)
 }
+
+// fragments
+
+export const fragments = gql`
+	...on HeroGenericRecord {
+		_modelApiKey
+		content {
+			blocks
+			links
+			value
+		}
+		image {
+			responsiveImage(imgixParams: { auto: format }) {
+				sizes src width height alt title base64
+			}
+		}
+	}
+`
