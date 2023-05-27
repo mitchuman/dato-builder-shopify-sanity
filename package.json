@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/react": "^3.0.2",
     "@types/node": "20.2.4",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "datocms-structured-text-utils": "^2.0.4",
     "graphql-request": "^6.1.0",
     "next": "13.4.4",
     "postcss": "8.4.23",

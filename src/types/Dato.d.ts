@@ -12,6 +12,11 @@ declare global {
 			slug: string
 		}
 
+		interface Heading {
+			text?: string
+			tag?: keyof JSX.IntrinsicElements
+		}
+
 		interface Image {
 			responsiveImage: ResponsiveImageType
 		}

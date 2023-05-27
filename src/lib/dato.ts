@@ -31,14 +31,20 @@ export function request<T>(
 export const fragments = gql`
 	...on HeroGenericRecord {
 		_modelApiKey
-		content {
-			blocks
-			links
-			value
-		}
+		heading { text tag }
+		content { blocks links value }
 		image {
-			responsiveImage(imgixParams: { auto: format }) {
-				sizes src width height alt title base64
+			responsiveImage(imgixParams: { auto: format }) { sizes src width height alt title base64 }
+		}
+	}
+	...on UvpListRecord {
+		_modelApiKey
+		heading
+		uvpItems {
+			title
+			content { blocks links value }
+			image {
+				responsiveImage(imgixParams: { auto: format }) { sizes src width height alt title base64 }
 			}
 		}
 	}
